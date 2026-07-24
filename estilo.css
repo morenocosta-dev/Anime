@@ -1,0 +1,529 @@
+*{
+    box-sizing: border-box;
+    padding-left: 0;
+}
+ 
+body{
+    margin: 0;
+     font-family: "Roboto", sans-serif;
+     color: var(--cream);
+     background: var(--black);
+     overflow-x: hidden;
+     background: black;
+}
+
+/* Animação de entrada */
+.animar {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.animar.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar{
+    display: flex;
+    flex-flow: row wrap;
+   height: 100%;
+     background:black;
+    justify-content: center;
+    align-items: center;
+    }
+
+#botao{
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: red;
+    opacity: o.5;
+}
+
+
+ #botao:hover{
+    opacity: 1;
+    background:white;
+    color: red;
+ }
+
+#logo h2{
+    flex: 20%;
+    margin-left:10px;
+     font-family: "Lobster", sans-ser;
+     color: red;
+}
+
+#logo{
+    
+    color:#180F4A;
+    font-size: 30px;
+    text-align: right;
+}
+
+.topo{
+    color: white;
+    text-align: center;
+}
+.ass{
+    color: white;
+    background: red;
+    padding: 0.9%;
+    border-radius: 5px;
+}
+
+
+.menu{
+    flex: 70%;
+    text-align: right;
+    padding: 20px;
+}  
+
+.menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 16px;
+}
+.menu a:hover{
+    color: red;
+    border-bottom: 4px solid red;
+    transition: 1s;
+}
+
+.pesquisa{
+    display: flex;
+    justify-content: center;
+    margin:40px;
+}
+
+.pesquisa input{
+    width: 60%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: #222;
+    color: white;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+}
+
+section{
+    padding: 30px 8%;
+}
+
+section h2{
+    color: #e50914;
+    margin-bottom: 20px;
+}
+
+.card{
+    background: #181818;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.card:hover{
+    transform: translateX(-8px);
+}
+
+.card img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3{
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.footer{
+    background:#14232b;
+    color:white;
+    padding:45px 8% 20px;
+    font-family:Arial, sans-serif;
+}
+
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+
+.footer-col{
+    display:flex;
+    flex-direction:column;
+}
+
+
+.footer-col h3{
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+
+.footer-col p{
+    margin:5px 0;
+    color:#c8c8c8;
+    font-size:14px;
+}
+
+
+.footer-col a{
+    text-decoration:none;
+    color:#c8c8c8;
+    margin:5px 0;
+    font-size:14px;
+}
+
+
+.social{
+    display:flex;
+    gap:12px;
+    margin:15px 0;
+}
+
+
+.social a{
+    width:28px;
+    height:28px;
+    border:1px solid #777;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+
+.footer small{
+    color:#aaa;
+}
+
+
+.copyright{
+    border-top:1px solid #39464d;
+    text-align:center;
+    margin-top:35px;
+    padding-top:20px;
+    color:#aaa;
+    font-size:13px;
+}
+
+
+/* Responsivo */
+@media(max-width:700px){
+
+.footer-container{
+    flex-direction:column;
+}
+
+}
+
+/* Animação de entrada */
+.animar {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+.animar.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsivo */
+@media(max-width:700px){
+
+.footer-container{
+    flex-direction:column;
+}
+
+}
+
+/* ==========================================================
+   MELHORIAS FASE 1
+   - Menu hambúrguer mobile
+   - Botão de favoritos (❤)
+   - Pesquisa e links rápidos
+   - Responsividade completa
+   - Visual dos cards aprimorado
+   ========================================================== */
+
+/* Corrige bug antigo (opacity inválida) */
+#botao {
+  opacity: 1;
+  background: red;
+}
+
+/* ---------- Menu hambúrguer ---------- */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  user-select: none;
+}
+
+/* ---------- Favoritos (coração) ---------- */
+.favorito-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  z-index: 2;
+}
+
+.favorito-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.favorito-btn.active {
+  color: #e50914;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.favorito-btn.pulso {
+  animation: pulso 0.3s ease;
+}
+
+@keyframes pulso {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+/* ---------- Cards aprimorados ---------- */
+.card {
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(229, 9, 20, 0.35);
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+.sem-resultado {
+  color: #aaa;
+  grid-column: 1 / -1;
+  padding: 10px 0;
+}
+
+/* ---------- Pesquisa ---------- */
+.pesquisa {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pesquisa input {
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.pesquisa input:focus {
+  outline: none;
+  background: #2b2b2b;
+  box-shadow: 0 0 0 2px #e50914;
+}
+
+.pesquisa-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pesquisa-links a {
+  color: #e50914;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #e50914;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pesquisa-links a:hover {
+  background: #e50914;
+  color: white;
+}
+
+/* ---------- Página Favoritos: estado vazio ---------- */
+.favoritos-vazio {
+  text-align: center;
+  color: #aaa;
+  padding: 60px 20px;
+}
+
+.favoritos-vazio h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+   ========================================================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .topo h1 {
+    font-size: 28px;
+    padding: 0 5%;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .card img {
+    height: 220px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 700px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 4%;
+  }
+
+  #logo {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  #logo h2 {
+    margin-left: 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background: #0d0d0d;
+    text-align: left;
+    padding: 10px 20px;
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .menu.ativo {
+    display: flex;
+    animation: abrirMenuMobile 0.3s ease;
+  }
+
+  .menu a {
+    padding: 14px 0;
+    border-bottom: 1px solid #222;
+    font-size: 17px;
+  }
+
+  #botao {
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  @keyframes abrirMenuMobile {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .topo h1 {
+    font-size: 22px;
+  }
+
+  .topo p {
+    font-size: 14px;
+  }
+
+  .pesquisa {
+    margin: 25px 4%;
+  }
+
+  .pesquisa input {
+    width: 100%;
+  }
+
+  section {
+    padding: 25px 5%;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .favorito-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .footer-container {
+    text-align: center;
+    align-items: center;
+  }
+
+  .social {
+    justify-content: center;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 400px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
