@@ -69,10 +69,14 @@ body{
 .ass{
     color: white;
     background: red;
-    padding: 0.9%;
+    padding: 10px 15px;
     border-radius: 5px;
+    opacity: 1;
 }
 
+.ass:hover{
+    opacity:0.5 ;
+}
 
 .menu{
     flex: 70%;
