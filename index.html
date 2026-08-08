@@ -5,6 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <title>Página inicial</title>
+    <style>
+
+         .hero {
+            min-height: 650px;
+            padding: 150px 7% 80px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, #0b0b12 15%, rgba(11,11,18,0.75) 45%, rgba(11,11,18,0.2)),
+                linear-gradient(0deg, #0b0b12 0%, transparent 30%),
+                url("capa.avif")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-content .tag {
+            display: inline-block;
+            background: #ff3158;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ff3158;
+        }
+
+        .hero p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            max-width: 560px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #ff3158;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e21e45;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: #111;
+        }
+
+        .btn-secondary:hover {
+            background: #ddd;
+        }
+
+       .categories {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            padding: 12px 22px;
+            background: #171720;
+            border: 1px solid #292933;
+            border-radius: 25px;
+            color: #ccc;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            background: #ff3158;
+            border-color: #ff3158;
+            color: white;
+        }
+
+         .featured {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            min-height: 380px;
+            background: #15151e;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .featured-image {
+            background:
+                linear-gradient(90deg, transparent, #15151e),
+                url("capa.avif")
+                center/cover;
+        }
+
+        .featured-content {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-content .tag {
+            color: #ff3158;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .featured-content h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .featured-content p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+    </style>
 </head>
 <body>
      <nav class="navbar">
@@ -24,18 +165,39 @@
         <a href="Series.html">Séries</a>
         <a href="Filmes.html">Filmes</a>
         <a id="botao" href="Favoritos.htlm.html">Favoritos</a>
+         <div class="search">
+
+        </div>
     </div>
 </nav>
+ <section class="hero" id="inicio">
+        <div class="hero-content">
 
-<div class="topo">
-    <h1>O melhor catálogo de Animes, Séries e Filmes</h1>
-    <p>Encontre tudo em um só lugar</p>
-    <a style="text-decoration: none;color: white;" href="Filmes.html"><button class="ass">Assistir agora</button></a>
-</div>
+            <div class="tag">🔥 EM DESTAQUE</div>
 
-<div class="pesquisa">
-    <input type="text" id="pesquisaInput" placeholder="Pesquisar...">
-</div>
+            <h1>
+                Explore o mundo dos
+                <span>ANIMES</span>
+            </h1>
+
+            <p>
+                Descubra novos mundos, personagens incríveis e histórias
+                inesquecíveis. Encontre seus animes favoritos em um só lugar.
+            </p>
+
+            <div class="buttons">
+                <a href="Anime.html" class="btn btn-primary">
+                    ▶ Assistir agora
+                </a>
+
+                <a href="#destaque" class="btn btn-secondary">
+                    + Mais informações
+                </a>
+            </div>
+
+
+        </div>
+    </section>
 
 <section>
 <h2>🔥Animes</h2>
@@ -118,6 +280,63 @@
  </div>   
 </div>
 </section>
+
+<!-- CATEGORIAS -->
+    <section id="categorias">
+
+        <div class="section-title">
+            <h2>🎭 Categorias</h2>
+        </div>
+
+        <div class="categories">
+            <div class="category">Ação</div>
+            <div class="category">Aventura</div>
+            <div class="category">Comédia</div>
+            <div class="category">Romance</div>
+            <div class="category">Fantasia</div>
+            <div class="category">Terror</div>
+            <div class="category">Drama</div>
+            <div class="category">Isekai</div>
+            <div class="category">Shounen</div>
+            <div class="category">Esportes</div>
+        </div>
+
+    </section>
+
+     <!-- DESTAQUE -->
+    <section id="destaque">
+
+        <div class="section-title">
+            <h2>⭐ Anime da semana</h2>
+        </div>
+
+        <div class="featured">
+
+            <div class="featured-image"></div>
+
+            <div class="featured-content">
+
+                <div class="tag">ANIME EM DESTAQUE</div>
+
+                <h2>Neon Warriors</h2>
+
+                <p>
+                    Em uma cidade dominada pela tecnologia, jovens guerreiros
+                    precisam descobrir seus poderes e enfrentar uma organização
+                    misteriosa que ameaça destruir o mundo.
+                </p>
+
+                <div>
+                    <a href="#" class="btn btn-primary">
+                        ▶ Assistir anime
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 <footer style="margin-top: 5%;" class="footer">
     <div class="footer-container">
